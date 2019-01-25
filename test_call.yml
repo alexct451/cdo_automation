@@ -1,0 +1,11 @@
+- hosts: localhost
+  gather_facts: no
+  tasks:
+    - name: Test API call
+      uri:
+        url: "https://jsonplaceholder.typicode.com/todos/1"
+        method: GET
+      register: uri_results
+
+    - debug:
+        var: uri_results

@@ -15,3 +15,6 @@ Benefits:
 
 Resources:
 - https://docs.defenseorchestrator.com/Configuration_Guides/Devices_and_Services/API_Tokens
+
+Requirements:
+ - Ansible 
