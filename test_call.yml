@@ -1,10 +1,25 @@
 - hosts: localhost
   gather_facts: no
   tasks:
-    - name: Test API call
+    - name: Test GET call
       uri:
         url: "https://jsonplaceholder.typicode.com/todos/1"
         method: GET
+      register: uri_results
+
+    - debug:
+        var: uri_results
+
+    - name: Test PUT call
+      uri:
+        url: "https://jsonplaceholder.typicode.com/posts/1"
+        method: PUT
+        body:
+          id: 1
+          title: "foo"
+          body: "bar"
+          userId: 1
+        body_format: form-urlencoded
       register: uri_results
 
     - debug:
